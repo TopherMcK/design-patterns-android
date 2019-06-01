@@ -14,9 +14,7 @@ import android.view.MenuItem;
 import com.clm.designpatterns.R;
 import com.clm.designpatterns.landing.LandingActivity;
 import com.clm.designpatterns.lifecycle.DesignPatternsActivityLifecycleListener;
-import com.clm.designpatterns.strategy.StrategyActivity;
-
-import javax.inject.Inject;
+import com.clm.designpatterns.strategy.ui.StrategyActivity;
 
 import butterknife.ButterKnife;
 import dagger.android.support.DaggerAppCompatActivity;

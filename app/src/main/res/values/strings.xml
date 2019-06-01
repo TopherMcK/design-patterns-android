@@ -12,4 +12,10 @@
 
     <!-- Pattern Labels -->
     <string name="strategy_label">Strategy - Ducks</string>
+
+    <!-- Duck Labels -->
+    <string name="mallard_duck_label">Mallard Duck</string>
+    <string name="redhead_duck_label">Redhead Duck</string>
+    <string name="rubber_duck_label">Rubber Duck</string>
+    <string name="wooden_duck_label">Wooden Duck</string>
 </resources>
