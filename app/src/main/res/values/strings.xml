@@ -2,8 +2,14 @@
     <string name="app_name">Design Patterns</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_title">Head First Design Patterns</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Nav specific labels -->
+    <string name="home_label">Home</string>
+
+    <!-- Pattern Labels -->
+    <string name="strategy_label">Strategy - Ducks</string>
 </resources>
