@@ -2,20 +2,19 @@ package com.clm.designpatterns.strategy.ducks.behaviors;
 
 import com.clm.designpatterns.util.MediaPlayerUtil;
 
-import timber.log.Timber;
-
 public class Quack implements QuackingBehavior {
     private MediaPlayerUtil mediaPlayerUtil;
-    public Quack(){}
+    private int quackSoundResource;
 
-    public Quack(MediaPlayerUtil mediaPlayerUtil){
+    public Quack(MediaPlayerUtil mediaPlayerUtil, int quackSoundResource){
         this.mediaPlayerUtil = mediaPlayerUtil;
+        this.quackSoundResource = quackSoundResource;
     }
 
     @Override
     public void quack() {
         if(mediaPlayerUtil != null){
-            mediaPlayerUtil.playFile();
+            mediaPlayerUtil.playFile(quackSoundResource);
         }
     }
 }

@@ -1,15 +1,11 @@
 package com.clm.designpatterns.strategy.ducks;
 
-import android.widget.ImageView;
-
 import com.clm.designpatterns.strategy.ducks.behaviors.FlyingBehavior;
 import com.clm.designpatterns.strategy.ducks.behaviors.QuackingBehavior;
 
 public abstract class Duck {
     FlyingBehavior flyingBehavior;
     QuackingBehavior quackingBehavior;
-
-    public Duck(){};
 
     public Duck(FlyingBehavior flyingBehavior,
             QuackingBehavior quackingBehavior) {

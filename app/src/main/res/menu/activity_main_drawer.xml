@@ -4,8 +4,10 @@
     tools:showIn="navigation_view">
         <item
             android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/home_label" />
         <item
             android:id="@+id/nav_strategy"
+            android:icon="@drawable/ic_menu_duck"
             android:title="@string/strategy_label" />
 </menu>

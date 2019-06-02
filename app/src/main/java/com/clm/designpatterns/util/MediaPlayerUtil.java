@@ -19,7 +19,13 @@ public class MediaPlayerUtil {
         mediaPlayer = new MediaPlayer();
     }
 
-    public void loadFile(int soundFileId){
+    public void playFile(int soundFileId){
+        loadFile(soundFileId);
+        mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.reset());
+        mediaPlayer.start();
+    }
+
+    private void loadFile(int soundFileId){
         try {
             mediaPlayer.setDataSource(
                     appContext.getResources().openRawResourceFd(soundFileId)
@@ -28,9 +34,5 @@ public class MediaPlayerUtil {
         } catch (IOException e) {
             Timber.e(e, "Error loading sound file : %s", e.getMessage());
         }
-    }
-
-    public void playFile(){
-        mediaPlayer.start();
     }
 }

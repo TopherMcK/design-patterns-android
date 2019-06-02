@@ -34,30 +34,24 @@ public class DuckPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         BaseDuckFragment duckFragment = null;
-        Duck duck = null;
         switch (position){
             case 0:
                 duckFragment = new MallardFragment();
-                mediaPlayerUtil.loadFile(R.raw.mallard);
-                ((MallardFragment) duckFragment).setMediaPlayerUtil(mediaPlayerUtil);
                 break;
             case 1:
                 duckFragment = new RedheadFragment();
-                duck = new RedheadDuck();
                 break;
             case 2:
                 duckFragment = new RubberDuckFragment();
-                duck = new RubberDuck();
                 break;
             case 3:
                 duckFragment = new WoodenDuckFragment();
-                duck = new WoodenDuck();
                 break;
             default:
                 // Do nothing... Position doesn't exist.
         }
         if(duckFragment != null){
-            duckFragment.setDuck(duck);
+            duckFragment.setMediaPlayerUtil(mediaPlayerUtil);
         }
         return duckFragment;
     }

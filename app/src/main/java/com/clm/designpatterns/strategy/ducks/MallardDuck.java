@@ -13,7 +13,7 @@ public class MallardDuck extends Duck {
     Context context;
 
     public MallardDuck(MediaPlayerUtil mediaPlayerUtil, ImageView mallardImageView, Context context){
-        super(new FlyWithWings(mallardImageView), new Quack(mediaPlayerUtil));
+        super(new FlyWithWings(mallardImageView), new Quack(mediaPlayerUtil, R.raw.mallard));
         this.mallardImageView = mallardImageView;
         this.context = context;
     }

@@ -9,19 +9,17 @@ import timber.log.Timber;
 
 public class FlyWithWings implements FlyingBehavior {
     private ImageView duckImageView;
-
-    public FlyWithWings(){}
+    private ObjectAnimator animation;
 
     public FlyWithWings(ImageView duckImageView){
         this.duckImageView = duckImageView;
+        setupAnimation();
     }
 
     @Override
     public void fly() {
-        Timber.i("Flying...");
-        if(duckImageView != null) {
-            ObjectAnimator animation = ObjectAnimator.ofFloat(duckImageView, "translationY", -100f);
-            animation.setDuration(1000);
+        Timber.d("Flying...");
+        if(isOkayToStartAnimation()) {
             animation.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
@@ -32,5 +30,16 @@ public class FlyWithWings implements FlyingBehavior {
             });
             animation.start();
         }
+    }
+
+    private void setupAnimation(){
+        if(duckImageView != null) {
+            animation = ObjectAnimator.ofFloat(duckImageView, "translationY", -90f);
+            animation.setDuration(1000);
+        }
+    }
+
+    private boolean isOkayToStartAnimation(){
+        return duckImageView != null && animation != null && !animation.isRunning();
     }
 }

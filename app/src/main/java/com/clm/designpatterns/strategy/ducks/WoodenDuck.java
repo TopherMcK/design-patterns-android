@@ -1,15 +1,12 @@
 package com.clm.designpatterns.strategy.ducks;
 
-import android.widget.ImageView;
-
 import com.clm.designpatterns.strategy.ducks.behaviors.FlyNoWay;
 import com.clm.designpatterns.strategy.ducks.behaviors.MuteQuack;
 
 public class WoodenDuck extends Duck {
 
     public WoodenDuck(){
-        flyingBehavior = new FlyNoWay();
-        quackingBehavior = new MuteQuack();
+        super(new FlyNoWay(), new MuteQuack());
     }
 
     @Override
@@ -19,11 +16,6 @@ public class WoodenDuck extends Duck {
 
     @Override
     public void display() {
-
-    }
-
-    @Override
-    public void display(ImageView imageView) {
 
     }
 }

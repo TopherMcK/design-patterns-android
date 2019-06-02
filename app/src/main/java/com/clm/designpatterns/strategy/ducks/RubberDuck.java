@@ -1,15 +1,13 @@
 package com.clm.designpatterns.strategy.ducks;
 
-import android.widget.ImageView;
-
-import com.clm.designpatterns.strategy.ducks.behaviors.FlyNoWay;
-import com.clm.designpatterns.strategy.ducks.behaviors.Squeak;
+import com.clm.designpatterns.strategy.ducks.behaviors.FlyingBehavior;
+import com.clm.designpatterns.strategy.ducks.behaviors.QuackingBehavior;
 
 public class RubberDuck extends Duck {
 
-    public RubberDuck(){
-        flyingBehavior = new FlyNoWay();
-        quackingBehavior = new Squeak();
+    public RubberDuck(FlyingBehavior flyingBehavior,
+                      QuackingBehavior quackingBehavior){
+        super(flyingBehavior, quackingBehavior);
     }
 
     @Override
@@ -19,11 +17,6 @@ public class RubberDuck extends Duck {
 
     @Override
     public void display() {
-
-    }
-
-    @Override
-    public void display(ImageView imageView) {
 
     }
 }

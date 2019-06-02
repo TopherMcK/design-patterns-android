@@ -1,10 +1,19 @@
 package com.clm.designpatterns.strategy.ui.fragments;
 
-import com.clm.designpatterns.R;
+import android.os.Bundle;
+
+import com.clm.designpatterns.strategy.ducks.RedheadDuck;
 
 public class RedheadFragment extends BaseDuckFragment {
+
     @Override
-    protected int layoutRes() {
-        return R.layout.rehead_duck;
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        duck = new RedheadDuck(mediaPlayerUtil,
+                duckImageView,
+                getActivity());
+
+        displayDuck();
     }
 }
