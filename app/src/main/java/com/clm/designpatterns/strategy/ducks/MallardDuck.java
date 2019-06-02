@@ -25,10 +25,8 @@ public class MallardDuck extends Duck {
 
     @Override
     public void display() {
-    }
-
-    @Override
-    public void display(ImageView imageView) {
-        imageView.setImageDrawable(context.getDrawable(R.drawable.mallard));
+        if(mallardImageView != null) {
+            mallardImageView.setImageDrawable(context.getDrawable(R.drawable.mallard));
+        }
     }
 }

@@ -1,12 +1,33 @@
 package com.clm.designpatterns.strategy.ui.fragments;
 
+import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.clm.designpatterns.R;
+import com.clm.designpatterns.strategy.ducks.MallardDuck;
+import com.clm.designpatterns.strategy.ducks.behaviors.FlyWithWings;
+import com.clm.designpatterns.util.MediaPlayerUtil;
 
 import butterknife.OnClick;
 
 public class MallardFragment extends BaseDuckFragment {
+    private MediaPlayerUtil mediaPlayerUtil;
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if(duck == null) {
+            duck = new MallardDuck(mediaPlayerUtil,
+                    getActivity().findViewById(R.id.duck_image_view),
+                    getActivity());
+        }
+        displayDuck();
+    }
+
+    public void setMediaPlayerUtil(MediaPlayerUtil mediaPlayerUtil){
+        this.mediaPlayerUtil = mediaPlayerUtil;
+    }
 
     @Override
     protected int layoutRes() {

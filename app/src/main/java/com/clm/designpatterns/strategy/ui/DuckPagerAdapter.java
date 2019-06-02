@@ -39,9 +39,7 @@ public class DuckPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 duckFragment = new MallardFragment();
                 mediaPlayerUtil.loadFile(R.raw.mallard);
-                duck = new MallardDuck(mediaPlayerUtil,
-                parent.findViewById(R.id.duck_image_view),
-                        parent);
+                ((MallardFragment) duckFragment).setMediaPlayerUtil(mediaPlayerUtil);
                 break;
             case 1:
                 duckFragment = new RedheadFragment();

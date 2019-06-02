@@ -10,12 +10,10 @@ public class Quack implements QuackingBehavior {
 
     public Quack(MediaPlayerUtil mediaPlayerUtil){
         this.mediaPlayerUtil = mediaPlayerUtil;
-
     }
 
     @Override
     public void quack() {
-        Timber.d("Quack!");
         if(mediaPlayerUtil != null){
             mediaPlayerUtil.playFile();
         }
