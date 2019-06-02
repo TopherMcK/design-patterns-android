@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import com.clm.designpatterns.R;
 import com.clm.designpatterns.base.BaseActivity;
 import com.clm.designpatterns.lifecycle.DesignPatternsActivityLifecycleListener;
+import com.clm.designpatterns.util.MediaPlayerUtil;
 
 import javax.inject.Inject;
 
@@ -14,6 +15,8 @@ public class StrategyActivity extends BaseActivity {
 
     @Inject
     DesignPatternsActivityLifecycleListener lifecycleListener;
+    @Inject
+    MediaPlayerUtil mediaPlayerUtil;
 
     @Override
     protected DesignPatternsActivityLifecycleListener lifecycleListener() {
@@ -30,7 +33,7 @@ public class StrategyActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         ViewPager viewPager = findViewById(R.id.pager);
-        DuckPagerAdapter duckPagerAdapter = new DuckPagerAdapter(getSupportFragmentManager(), this);
+        DuckPagerAdapter duckPagerAdapter = new DuckPagerAdapter(getSupportFragmentManager(), this, mediaPlayerUtil);
         viewPager.setAdapter(duckPagerAdapter);
         TabLayout tabLayout = findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);

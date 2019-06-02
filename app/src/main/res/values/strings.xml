@@ -18,4 +18,8 @@
     <string name="redhead_duck_label">Redhead Duck</string>
     <string name="rubber_duck_label">Rubber Duck</string>
     <string name="wooden_duck_label">Wooden Duck</string>
+    <!-- Duck Buttons -->
+    <string name="perform_fly">Perform Fly</string>
+    <string name="perform_quack">Perform Quack</string>
+    <string name="perform_swim">Perform Swim</string>
 </resources>
