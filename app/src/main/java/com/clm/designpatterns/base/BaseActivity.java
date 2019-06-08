@@ -16,13 +16,14 @@ import com.clm.designpatterns.landing.LandingActivity;
 import com.clm.designpatterns.lifecycle.DesignPatternsActivityLifecycleListener;
 import com.clm.designpatterns.strategy.ui.StrategyActivity;
 
+import javax.inject.Inject;
+
 import butterknife.ButterKnife;
 import dagger.android.support.DaggerAppCompatActivity;
 
 public abstract class BaseActivity extends DaggerAppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    protected abstract DesignPatternsActivityLifecycleListener lifecycleListener();
+    @Inject DesignPatternsActivityLifecycleListener lifecycleListener;
 
     @LayoutRes
     protected abstract int layoutRes();
@@ -75,10 +76,10 @@ public abstract class BaseActivity extends DaggerAppCompatActivity
         // Check Lifecycle listener to make sure the current activity
         // is not able to be launched from the menu
         if(id == R.id.nav_home &&
-                !(lifecycleListener().getCurrentActivity() instanceof LandingActivity)) {
+                !(lifecycleListener.getCurrentActivity() instanceof LandingActivity)) {
             launchPatternActivity(LandingActivity.class);
         } else if (id == R.id.nav_strategy &&
-                !(lifecycleListener().getCurrentActivity() instanceof StrategyActivity)) {
+                !(lifecycleListener.getCurrentActivity() instanceof StrategyActivity)) {
             launchPatternActivity(StrategyActivity.class);
         }
 

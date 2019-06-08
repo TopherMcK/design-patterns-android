@@ -25,6 +25,9 @@
         <activity android:name=".strategy.ui.StrategyActivity"
             android:label="@string/strategy_label"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".command.CommandActivity"
+            android:label="@string/strategy_label"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
