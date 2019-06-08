@@ -10,8 +10,7 @@ public class RubberDuckFragment extends BaseDuckFragment {
     void setupBehaviors() {
         flyingBehavior = new FlyNoWay();
         quackingBehavior = new Squeak(
-                mediaPlayerUtil,
-                R.raw.squeak);
+                mediaPlayerUtil);
     }
 
     @Override
