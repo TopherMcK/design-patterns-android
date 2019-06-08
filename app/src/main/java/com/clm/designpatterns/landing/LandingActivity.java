@@ -1,23 +1,16 @@
 package com.clm.designpatterns.landing;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.clm.designpatterns.R;
 import com.clm.designpatterns.base.BaseActivity;
 import com.clm.designpatterns.lifecycle.DesignPatternsActivityLifecycleListener;
+import com.clm.designpatterns.strategy.ui.StrategyActivity;
 
 import javax.inject.Inject;
+
+import butterknife.OnClick;
 
 public class LandingActivity extends BaseActivity {
 
@@ -25,7 +18,7 @@ public class LandingActivity extends BaseActivity {
     DesignPatternsActivityLifecycleListener lifecycleListener;
 
     @Override
-    protected DesignPatternsActivityLifecycleListener lifecycleListener(){
+    protected DesignPatternsActivityLifecycleListener lifecycleListener() {
         return lifecycleListener;
     }
 
@@ -37,5 +30,16 @@ public class LandingActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @OnClick({R.id.duckBtn, R.id.weatherBtn})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.duckBtn:
+                launchPatternActivity(StrategyActivity.class);
+                break;
+            case R.id.weatherBtn:
+                break;
+        }
     }
 }

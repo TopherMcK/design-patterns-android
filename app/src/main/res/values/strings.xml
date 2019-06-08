@@ -12,6 +12,7 @@
 
     <!-- Pattern Labels -->
     <string name="strategy_label">Strategy - Ducks</string>
+    <string name="observer_label">Observer - Weather Station</string>
 
     <!-- Duck Labels -->
     <string name="mallard_duck_label">Mallard Duck</string>

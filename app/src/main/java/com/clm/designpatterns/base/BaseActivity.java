@@ -95,7 +95,7 @@ public abstract class BaseActivity extends DaggerAppCompatActivity
         return true;
     }
 
-    private void launchPatternActivity(Class<?> activityToStart){
+    protected void launchPatternActivity(Class<?> activityToStart){
         Intent newActivity = new Intent(BaseActivity.this, activityToStart);
         this.startActivity(newActivity);
     }

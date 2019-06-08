@@ -10,4 +10,9 @@
             android:id="@+id/nav_strategy"
             android:icon="@drawable/ic_menu_duck"
             android:title="@string/strategy_label" />
+
+        <item
+            android:id="@+id/nav_observer"
+            android:icon="@drawable/ic_cloud_black_24dp"
+            android:title="@string/observer_label" />
 </menu>
