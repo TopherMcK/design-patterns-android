@@ -8,16 +8,23 @@ import android.widget.ImageView;
 
 import com.clm.designpatterns.R;
 import com.clm.designpatterns.base.BaseFragment;
-import com.clm.designpatterns.strategy.ducks.Duck;
+import com.clm.designpatterns.strategy.behaviors.FlyingBehavior;
+import com.clm.designpatterns.strategy.behaviors.QuackingBehavior;
 import com.clm.designpatterns.util.MediaPlayerUtil;
+
+import javax.inject.Inject;
 
 import butterknife.OnClick;
 
 public abstract class BaseDuckFragment extends BaseFragment {
-    Duck duck;
+    @Inject
     MediaPlayerUtil mediaPlayerUtil;
+
     ImageView duckImageView;
-    View view;
+    FlyingBehavior flyingBehavior;
+    QuackingBehavior quackingBehavior;
+
+    private View view;
 
     @Override
     protected int layoutRes() {
@@ -34,46 +41,52 @@ public abstract class BaseDuckFragment extends BaseFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         duckImageView = view.findViewById(R.id.duck_image_view);
+        setupBehaviors();
+        displayDuck();
     }
 
     @OnClick({R.id.fly_btn, R.id.quack_btn, R.id.swim_btn})
     public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.fly_btn:
-                performFly();
-                break;
-            case R.id.quack_btn:
-                performQuack();
-                break;
-            case R.id.swim_btn:
-                performSwim();
-                break;
-            default:
-                // Do nothing
+            switch (view.getId()) {
+                case R.id.fly_btn:
+                    performFly();
+                    break;
+                case R.id.quack_btn:
+                    performQuack();
+                    break;
+                case R.id.swim_btn:
+                    swim();
+                    break;
+                default:
+                    // Do nothing
+            }
+    }
+
+    abstract void setupBehaviors();
+
+    abstract int imageResource();
+
+    void displayDuck() {
+        if(duckImageView != null) {
+            duckImageView.setImageDrawable(getActivity().getDrawable(imageResource()));
         }
     }
 
-    public void setMediaPlayerUtil(MediaPlayerUtil mediaPlayerUtil){
-        this.mediaPlayerUtil = mediaPlayerUtil;
+    private void performFly(){
+        if(flyingBehavior != null) {
+            flyingBehavior.fly();
+        }
     }
 
-    void displayDuck() {
-        if (duck != null)
-            duck.display();
+    private void performQuack(){
+        if(quackingBehavior != null) {
+            quackingBehavior.quack();
+        }
     }
 
-    void performFly() {
-        if (duck != null)
-            duck.performFly();
-    }
-
-    void performQuack() {
-        if (duck != null)
-            duck.performQuack();
-    }
-
-    void performSwim() {
-        if (duck != null)
-            duck.swim();
+    private void swim(){
+        if(mediaPlayerUtil != null){
+            mediaPlayerUtil.playFile(R.raw.swim_splash);
+        }
     }
 }

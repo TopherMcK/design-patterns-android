@@ -1,4 +1,4 @@
-package com.clm.designpatterns.strategy.ducks.behaviors;
+package com.clm.designpatterns.strategy.behaviors;
 
 import com.clm.designpatterns.util.MediaPlayerUtil;
 
