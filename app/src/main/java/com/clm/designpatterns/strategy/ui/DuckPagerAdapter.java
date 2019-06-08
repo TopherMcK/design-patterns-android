@@ -1,34 +1,25 @@
 package com.clm.designpatterns.strategy.ui;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.clm.designpatterns.R;
-import com.clm.designpatterns.strategy.ducks.Duck;
-import com.clm.designpatterns.strategy.ducks.MallardDuck;
-import com.clm.designpatterns.strategy.ducks.RedheadDuck;
-import com.clm.designpatterns.strategy.ducks.RubberDuck;
-import com.clm.designpatterns.strategy.ducks.WoodenDuck;
 import com.clm.designpatterns.strategy.ui.fragments.BaseDuckFragment;
 import com.clm.designpatterns.strategy.ui.fragments.MallardFragment;
 import com.clm.designpatterns.strategy.ui.fragments.RedheadFragment;
 import com.clm.designpatterns.strategy.ui.fragments.RubberDuckFragment;
 import com.clm.designpatterns.strategy.ui.fragments.WoodenDuckFragment;
-import com.clm.designpatterns.util.MediaPlayerUtil;
 
 import dagger.android.support.DaggerAppCompatActivity;
 
 public class DuckPagerAdapter extends FragmentStatePagerAdapter {
 
     private DaggerAppCompatActivity parent;
-    private MediaPlayerUtil mediaPlayerUtil;
 
-    public DuckPagerAdapter(FragmentManager fragmentManager, DaggerAppCompatActivity parent, MediaPlayerUtil mediaPlayerUtil){
+    public DuckPagerAdapter(FragmentManager fragmentManager, DaggerAppCompatActivity parent){
         super(fragmentManager);
         this.parent = parent;
-        this.mediaPlayerUtil = mediaPlayerUtil;
     }
 
     @Override
@@ -50,9 +41,7 @@ public class DuckPagerAdapter extends FragmentStatePagerAdapter {
             default:
                 // Do nothing... Position doesn't exist.
         }
-        if(duckFragment != null){
-            duckFragment.setMediaPlayerUtil(mediaPlayerUtil);
-        }
+
         return duckFragment;
     }
 

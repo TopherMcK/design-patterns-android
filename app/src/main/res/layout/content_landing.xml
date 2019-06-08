@@ -11,11 +11,15 @@
     android:gravity="center">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/duckBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/strategy_label"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="28dp" />
+        android:text="@string/strategy_label" />
+
+    <Button
+        android:id="@+id/weatherBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/observer_label"/>
 
 </LinearLayout>

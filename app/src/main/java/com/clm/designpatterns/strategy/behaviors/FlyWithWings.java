@@ -1,9 +1,11 @@
-package com.clm.designpatterns.strategy.ducks.behaviors;
+package com.clm.designpatterns.strategy.behaviors;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.widget.ImageView;
+
+import org.jetbrains.annotations.TestOnly;
 
 import timber.log.Timber;
 
@@ -14,6 +16,12 @@ public class FlyWithWings implements FlyingBehavior {
     public FlyWithWings(ImageView duckImageView){
         this.duckImageView = duckImageView;
         setupAnimation();
+    }
+
+    @TestOnly
+    FlyWithWings(ImageView duckImageView, ObjectAnimator animation){
+        this.duckImageView = duckImageView;
+        this.animation = animation;
     }
 
     @Override

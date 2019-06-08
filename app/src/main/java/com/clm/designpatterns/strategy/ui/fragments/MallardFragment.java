@@ -1,20 +1,19 @@
 package com.clm.designpatterns.strategy.ui.fragments;
 
-import android.os.Bundle;
-
-import com.clm.designpatterns.strategy.ducks.MallardDuck;
+import com.clm.designpatterns.R;
+import com.clm.designpatterns.strategy.behaviors.FlyWithWings;
+import com.clm.designpatterns.strategy.behaviors.Quack;
 
 public class MallardFragment extends BaseDuckFragment {
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    void setupBehaviors() {
+        flyingBehavior = new FlyWithWings(duckImageView);
+        quackingBehavior = new Quack(mediaPlayerUtil, R.raw.mallard);
+    }
 
-        duck = new MallardDuck(
-                mediaPlayerUtil,
-                duckImageView,
-                getActivity());
-
-        displayDuck();
+    @Override
+    int imageResource() {
+        return R.drawable.mallard;
     }
 }
