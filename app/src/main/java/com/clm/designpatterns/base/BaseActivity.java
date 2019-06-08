@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.clm.designpatterns.R;
+import com.clm.designpatterns.command.CommandActivity;
 import com.clm.designpatterns.landing.LandingActivity;
 import com.clm.designpatterns.lifecycle.DesignPatternsActivityLifecycleListener;
 import com.clm.designpatterns.strategy.ui.StrategyActivity;
@@ -81,6 +82,8 @@ public abstract class BaseActivity extends DaggerAppCompatActivity
         } else if (id == R.id.nav_strategy &&
                 !(lifecycleListener.getCurrentActivity() instanceof StrategyActivity)) {
             launchPatternActivity(StrategyActivity.class);
+        } else if(id == R.id.nav_command && !(lifecycleListener.getCurrentActivity() instanceof CommandActivity)){
+            launchPatternActivity(CommandActivity.class);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
