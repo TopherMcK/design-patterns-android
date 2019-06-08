@@ -15,6 +15,8 @@ public class StrategyActivity extends BaseActivity {
     @Inject
     DesignPatternsActivityLifecycleListener lifecycleListener;
 
+    TabLayout tabLayout;
+
     @Override
     protected DesignPatternsActivityLifecycleListener lifecycleListener() {
         return lifecycleListener;
@@ -35,7 +37,7 @@ public class StrategyActivity extends BaseActivity {
         ViewPager viewPager = findViewById(R.id.pager);
         DuckPagerAdapter duckPagerAdapter = new DuckPagerAdapter(getSupportFragmentManager(), this);
         viewPager.setAdapter(duckPagerAdapter);
-        TabLayout tabLayout = findViewById(R.id.tablayout);
+        tabLayout = findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
     }
 }

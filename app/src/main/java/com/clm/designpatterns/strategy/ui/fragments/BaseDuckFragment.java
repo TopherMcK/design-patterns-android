@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.clm.designpatterns.R;
@@ -14,11 +15,19 @@ import com.clm.designpatterns.util.MediaPlayerUtil;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public abstract class BaseDuckFragment extends BaseFragment {
     @Inject
     MediaPlayerUtil mediaPlayerUtil;
+
+    @BindView(R.id.fly_btn)
+    Button flyBtn;
+    @BindView(R.id.quack_btn)
+    Button quackBtn;
+    @BindView(R.id.swim_btn)
+    Button swimBtn;
 
     ImageView duckImageView;
     FlyingBehavior flyingBehavior;
@@ -47,19 +56,19 @@ public abstract class BaseDuckFragment extends BaseFragment {
 
     @OnClick({R.id.fly_btn, R.id.quack_btn, R.id.swim_btn})
     public void onViewClicked(View view) {
-            switch (view.getId()) {
-                case R.id.fly_btn:
-                    performFly();
-                    break;
-                case R.id.quack_btn:
-                    performQuack();
-                    break;
-                case R.id.swim_btn:
-                    swim();
-                    break;
-                default:
-                    // Do nothing
-            }
+        switch (view.getId()) {
+            case R.id.fly_btn:
+                performFly();
+                break;
+            case R.id.quack_btn:
+                performQuack();
+                break;
+            case R.id.swim_btn:
+                swim();
+                break;
+            default:
+                // Do nothing
+        }
     }
 
     abstract void setupBehaviors();
@@ -67,25 +76,25 @@ public abstract class BaseDuckFragment extends BaseFragment {
     abstract int imageResource();
 
     void displayDuck() {
-        if(duckImageView != null) {
+        if (duckImageView != null) {
             duckImageView.setImageDrawable(getActivity().getDrawable(imageResource()));
         }
     }
 
-    private void performFly(){
-        if(flyingBehavior != null) {
+    private void performFly() {
+        if (flyingBehavior != null) {
             flyingBehavior.fly();
         }
     }
 
-    private void performQuack(){
-        if(quackingBehavior != null) {
+    private void performQuack() {
+        if (quackingBehavior != null) {
             quackingBehavior.quack();
         }
     }
 
-    private void swim(){
-        if(mediaPlayerUtil != null){
+    private void swim() {
+        if (mediaPlayerUtil != null) {
             mediaPlayerUtil.playFile(R.raw.swim_splash);
         }
     }
