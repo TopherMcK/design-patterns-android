@@ -5,11 +5,8 @@ import android.view.View;
 
 import com.clm.designpatterns.R;
 import com.clm.designpatterns.base.BaseActivity;
-import com.clm.designpatterns.command.CommandActivity;
-import com.clm.designpatterns.lifecycle.DesignPatternsActivityLifecycleListener;
+import com.clm.designpatterns.command.view.CommandActivity;
 import com.clm.designpatterns.strategy.ui.StrategyActivity;
-
-import javax.inject.Inject;
 
 import butterknife.OnClick;
 import timber.log.Timber;

@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.clm.designpatterns.R;
-import com.clm.designpatterns.command.CommandActivity;
+import com.clm.designpatterns.command.view.CommandActivity;
 import com.clm.designpatterns.landing.LandingActivity;
 import com.clm.designpatterns.lifecycle.DesignPatternsActivityLifecycleListener;
 import com.clm.designpatterns.strategy.ui.StrategyActivity;
