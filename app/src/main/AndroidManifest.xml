@@ -3,6 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.clm.designpatterns">
 
+    <uses-permission
+        android:required="true"
+        android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission
+        android:required="true"
+        android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission
+        android:required="true"
+        android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission
+        android:required="true"
+        android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,7 +38,7 @@
         <activity android:name=".strategy.ui.StrategyActivity"
             android:label="@string/strategy_label"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".command.CommandActivity"
+        <activity android:name=".command.view.CommandActivity"
             android:label="@string/strategy_label"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
