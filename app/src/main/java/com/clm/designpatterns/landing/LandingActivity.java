@@ -5,22 +5,13 @@ import android.view.View;
 
 import com.clm.designpatterns.R;
 import com.clm.designpatterns.base.BaseActivity;
-import com.clm.designpatterns.lifecycle.DesignPatternsActivityLifecycleListener;
+import com.clm.designpatterns.command.view.CommandActivity;
 import com.clm.designpatterns.strategy.ui.StrategyActivity;
 
-import javax.inject.Inject;
-
 import butterknife.OnClick;
+import timber.log.Timber;
 
 public class LandingActivity extends BaseActivity {
-
-    @Inject
-    DesignPatternsActivityLifecycleListener lifecycleListener;
-
-    @Override
-    protected DesignPatternsActivityLifecycleListener lifecycleListener() {
-        return lifecycleListener;
-    }
 
     @Override
     protected int layoutRes() {
@@ -40,6 +31,11 @@ public class LandingActivity extends BaseActivity {
                 break;
             case R.id.weatherBtn:
                 break;
+            case  R.id.remoteBtn:
+                launchPatternActivity(CommandActivity.class);
+                break;
+            default:
+                Timber.w("Unknown button clicked.");
         }
     }
 }
