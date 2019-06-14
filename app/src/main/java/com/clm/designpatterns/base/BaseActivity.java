@@ -15,7 +15,8 @@ import com.clm.designpatterns.R;
 import com.clm.designpatterns.command.view.CommandActivity;
 import com.clm.designpatterns.landing.LandingActivity;
 import com.clm.designpatterns.lifecycle.DesignPatternsActivityLifecycleListener;
-import com.clm.designpatterns.strategy.ui.StrategyActivity;
+import com.clm.designpatterns.ducks.ui.StrategyActivity;
+import com.clm.designpatterns.weather.ui.WeatherStationActivity;
 
 import javax.inject.Inject;
 
@@ -84,6 +85,8 @@ public abstract class BaseActivity extends DaggerAppCompatActivity
             launchPatternActivity(StrategyActivity.class);
         } else if(id == R.id.nav_command && !(lifecycleListener.getCurrentActivity() instanceof CommandActivity)){
             launchPatternActivity(CommandActivity.class);
+        } else if(id == R.id.nav_observer && !(lifecycleListener.getCurrentActivity() instanceof WeatherStationActivity)){
+            launchPatternActivity(WeatherStationActivity.class);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

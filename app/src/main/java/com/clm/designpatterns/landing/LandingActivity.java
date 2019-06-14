@@ -6,7 +6,8 @@ import android.view.View;
 import com.clm.designpatterns.R;
 import com.clm.designpatterns.base.BaseActivity;
 import com.clm.designpatterns.command.view.CommandActivity;
-import com.clm.designpatterns.strategy.ui.StrategyActivity;
+import com.clm.designpatterns.ducks.ui.StrategyActivity;
+import com.clm.designpatterns.weather.ui.WeatherStationActivity;
 
 import butterknife.OnClick;
 import timber.log.Timber;
@@ -30,6 +31,7 @@ public class LandingActivity extends BaseActivity {
                 launchPatternActivity(StrategyActivity.class);
                 break;
             case R.id.weatherBtn:
+                launchPatternActivity(WeatherStationActivity.class);
                 break;
             case  R.id.remoteBtn:
                 launchPatternActivity(CommandActivity.class);

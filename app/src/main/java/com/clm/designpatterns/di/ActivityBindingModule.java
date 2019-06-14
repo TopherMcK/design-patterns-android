@@ -2,8 +2,8 @@ package com.clm.designpatterns.di;
 
 import com.clm.designpatterns.command.view.CommandActivity;
 import com.clm.designpatterns.landing.LandingActivity;
-import com.clm.designpatterns.strategy.di.StrategyFragmentBindingModule;
-import com.clm.designpatterns.strategy.ui.StrategyActivity;
+import com.clm.designpatterns.ducks.di.StrategyFragmentBindingModule;
+import com.clm.designpatterns.ducks.ui.StrategyActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

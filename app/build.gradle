@@ -52,6 +52,8 @@ dependencies {
 
     implementation "com.jakewharton.timber:timber:$timberVersion"
 
+    implementation "org.apache.commons:commons-collections4:$commonsCollectionsVersion"
+
     testImplementation 'junit:junit:4.12'
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
     androidTestImplementation "com.android.support.test:runner:$supportTestVersion"

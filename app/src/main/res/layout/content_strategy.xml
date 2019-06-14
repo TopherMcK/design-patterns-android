@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".strategy.ui.StrategyActivity"
+    tools:context=".ducks.ui.StrategyActivity"
     tools:showIn="@layout/app_bar_landing"
     android:orientation="vertical"
     android:gravity="center">

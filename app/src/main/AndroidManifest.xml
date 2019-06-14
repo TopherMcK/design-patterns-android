@@ -35,11 +35,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".strategy.ui.StrategyActivity"
+        <activity android:name=".ducks.ui.StrategyActivity"
             android:label="@string/strategy_label"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".command.view.CommandActivity"
-            android:label="@string/strategy_label"
+            android:label="@string/command_label"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".weather.ui.WeatherStationActivity"
+            android:label="@string/observer_label"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
